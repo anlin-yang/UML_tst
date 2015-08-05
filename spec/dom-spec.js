@@ -23,8 +23,8 @@ describe("Dom Test", function() {
       "<input type='checkbox' name='test-3-1' value='B' checked='true' /><br />" +
       "<input type='checkbox' name='test-3-1' value='C' /><br />" +
       "4.判断题：<br />" +
-      "<input type='radio' name='test-4-1' value='true'  checked='true' /><br />" +
-      "<input type='radio' name='test-4-1' value='false' /><br />" +
+      "<input type='radio' name='test-4-1' value='V'  checked='true' /><br />" +
+      "<input type='radio' name='test-4-1' value='X' /><br />" +
       "5.简答题：<br />" +
       "<textarea name='test-5-1' rows='4' cols='20' >你是不是不好</textarea>" +
       "</form>";
@@ -57,7 +57,11 @@ describe("Dom Test", function() {
     }, {
       name: "test-4-1",
       type: "radio",
-      value: "true"
+      value: "V"
+    }, {
+      name: "test-5-1",
+      type: "textarea",
+      value: ["你是不是不好"]
     }]);
   });
 });
