@@ -1,4 +1,3 @@
-
 describe("Dom Test", function() {
   var form;
   var testContainer;
@@ -39,13 +38,26 @@ describe("Dom Test", function() {
   it("should return corrent tag name", function() {
     var theFormAnalyser = new FormAnalyser();
     var result = theFormAnalyser.formSerializer(form);
-      expect(result).toEqual([
-        {name:"test-1-1",type:"text",value:["啊哈"]},
-        {name:"test-1-2",type:"text",value:["无哈","哈哈","呵呵"]},
-        {name:"test-2-1",type:"radio",value:"A"},
-        {name:"test-3-1",type:"checkbox",value:"AB"},
-        {name:"test-4-1",type:"radio",value:"true"}
-        ]
-      );
+    expect(result).toEqual([{
+      name: "test-1-1",
+      type: "text",
+      value: ["啊哈"]
+    }, {
+      name: "test-1-2",
+      type: "text",
+      value: ["无哈", "哈哈", "呵呵"]
+    }, {
+      name: "test-2-1",
+      type: "radio",
+      value: "A"
+    }, {
+      name: "test-3-1",
+      type: "checkbox",
+      value: "AB"
+    }, {
+      name: "test-4-1",
+      type: "radio",
+      value: "true"
+    }]);
   });
 });

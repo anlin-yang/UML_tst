@@ -1,18 +1,16 @@
-function FormAnalyser() {
-
-}
+function FormAnalyser() {}
 
 FormAnalyser.prototype.formSerializer = function(form) {
   var result = [];
-  var tempp = {};
 
   [].forEach.call(form, function(elem) {
     var isExist;
+    isExist = result.some(function(val) {
+      return val.name === elem.name;
+    });
+
     switch (elem.type) {
       case 'text':
-        isExist = result.some(function(val) {
-          return val.name === elem.name;
-        });
         if (isExist) {
           var temp2 = result.filter(function(item) {
             return item.name === elem.name;
@@ -25,12 +23,9 @@ FormAnalyser.prototype.formSerializer = function(form) {
             value: [elem.value]
           });
         }
-
         break;
+
       case 'radio':
-        isExist = result.some(function(val) {
-          return val.name === elem.name;
-        });
         if (isExist === false) {
           if (elem.checked === true) {
             result.push({
@@ -41,10 +36,8 @@ FormAnalyser.prototype.formSerializer = function(form) {
           }
         }
         break;
+        
       case 'checkbox':
-        isExist = result.some(function(val) {
-          return val.name === elem.name;
-        });
         if (isExist) {
           if (elem.checked === true) {
             var temp3 = result.filter(function(item) {
