@@ -49,15 +49,15 @@ describe("Dom Test", function() {
     }, {
       name: "test-2-1",
       type: "radio",
-      value: "A"
+      value: ["A"]
     }, {
       name: "test-3-1",
       type: "checkbox",
-      value: "AB"
+      value: ["A","B"]
     }, {
       name: "test-4-1",
       type: "radio",
-      value: "V"
+      value: ["V"]
     }, {
       name: "test-5-1",
       type: "textarea",

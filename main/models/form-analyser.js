@@ -26,10 +26,5 @@ FormAnalyser.prototype.formSerializer = function(form) {
       }
     }
   });
-  result.forEach(function(val) {
-    if (val.type === 'radio' || val.type === 'checkbox') {
-      val.value = val.value.join("");
-    }
-  });
   return result;
 };
