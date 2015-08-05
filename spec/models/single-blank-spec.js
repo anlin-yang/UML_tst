@@ -4,13 +4,16 @@ describe("singleBlank Test", function() {
   beforeEach(function() {
     temp = [{
       name: 'test-1-1',
-      value: "你好"
+      value: ["你好"],
+      score: 1
     }, {
       name: 'test-1-2',
-      value: "你好"
+      value: ["你好"],
+      score: 1
     }, {
       name: 'test-2-1',
-      value: 'A'
+      value: ["A"],
+      score: 2
     }];
     theSingleBlank = new SingleBlank();
 
@@ -20,18 +23,18 @@ describe("singleBlank Test", function() {
   it("should return corrent result.", function() {
     var answer = {
       name: "test-1-1",
-      value: "你好"
+      value: ["你好"]
     };
     var answer2 = {
       name: "test-1-2",
-      value: "不好"
+      value: ["不好"]
     };
     var answer3 = {
       name: "test-2-1",
-      value: "A"
+      value: ["A"]
     };
-    expect(theSingleBlank.singleBlankMatch(answer)).toBe(true);
-    expect(theSingleBlank.singleBlankMatch(answer2)).toBe(false);
-    expect(theSingleBlank.singleBlankMatch(answer3)).toBe(true);
+    expect(theSingleBlank.singleBlankMatch(answer)).toBe(1);
+    expect(theSingleBlank.singleBlankMatch(answer2)).toBe(0);
+    expect(theSingleBlank.singleBlankMatch(answer3)).toBe(2);
   });
 });
