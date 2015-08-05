@@ -5,11 +5,12 @@ MultipleChoice.prototype.mutipleChoiceMatch = function(mutipleChoiceanswer) {
   var isExist = 0;
   var correctNum = 0;
   var error = 0;
-  var score = 0;
+  var realScore = 0;
   var answerNum = 0;
 
   this.answer.forEach(function(val) {
     if (val.name === mutipleChoiceanswer.name) {
+      realScore = val.score;
       answerNum = val.value.length;
       mutipleChoiceanswer.value.forEach(function(elem) {
         isExist = val.value.some(function(item) {
@@ -25,15 +26,15 @@ MultipleChoice.prototype.mutipleChoiceMatch = function(mutipleChoiceanswer) {
     }
   });
   if (error === 1) {
-    score = 0;
+    realScore = 0;
   } else {
     if (correctNum === answerNum) {
-      score = 5;
+
     } else {
-      score = correctNum;
+      realScore = realScore / 2;
     }
   }
-  return score;
+  return realScore;
 };
 
 MultipleChoice.prototype.setMultipleChoice = function(mutipleChoiceAnswer) {

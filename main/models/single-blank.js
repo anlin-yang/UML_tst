@@ -7,7 +7,17 @@ SingleBlank.prototype.setSingleBlank = function(singleBlankAnswer) {
 };
 
 SingleBlank.prototype.singleBlankMatch = function(singleBlankAnswer) {
-  return this.answer.some(function(val) {
-    return val.value === singleBlankAnswer.value;
+  var realScore = 0;
+  var isTrue = 0;
+  this.answer.forEach(function(item) {
+    if (item.name === singleBlankAnswer.name) {
+      if (item.value[0] === singleBlankAnswer.value[0]) {
+        isTrue = 1;
+      }
+      if (isTrue) {
+        realScore = item.score;
+      }
+    }
   });
+  return realScore;
 };
