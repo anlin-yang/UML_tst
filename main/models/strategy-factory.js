@@ -1,8 +1,6 @@
-function StrategyFactory() {
+function StrategyFactory() {}
 
-}
-
-StrategyFactory.prototype.getStrategy = function(type) {
+StrategyFactory.prototype.getStrategyObj = function(type) {
   var checkerObj;
   switch (type) {
     case "text":
