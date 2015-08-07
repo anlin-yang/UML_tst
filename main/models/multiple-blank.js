@@ -2,7 +2,7 @@ function MutipleBlank() {
   this.answer = [];
 }
 
-MutipleBlank.prototype.mutipleBlankMatch = function(mutipleBlankAnswer) {
+MutipleBlank.prototype.caculateScore = function(mutipleBlankAnswer) {
   var isExist = 0;
   var correctNum = 0;
   var realScore = 0;

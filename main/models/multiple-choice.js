@@ -1,7 +1,7 @@
 function MultipleChoice() {
   this.answer = [];
 }
-MultipleChoice.prototype.mutipleChoiceMatch = function(mutipleChoiceanswer) {
+MultipleChoice.prototype.caculateScore = function(mutipleChoiceanswer) {
   var isExist = 0;
   var correctNum = 0;
   var error = 0;

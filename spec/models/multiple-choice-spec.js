@@ -17,7 +17,7 @@ describe("MultipleChoice Test", function() {
       name: 'test-1-1',
       value: ["A","C"]
     };
-    expect(theMutipleChoice.mutipleChoiceMatch(answer)).toBe(1);
+    expect(theMutipleChoice.caculateScore(answer)).toBe(1);
   });
 
   it("should return full score.", function() {
@@ -25,6 +25,6 @@ describe("MultipleChoice Test", function() {
       name: 'test-1-1',
       value: ["A","B","C"]
     };
-    expect(theMutipleChoice.mutipleChoiceMatch(answer)).toBe(2);
+    expect(theMutipleChoice.caculateScore(answer)).toBe(2);
   });
 });

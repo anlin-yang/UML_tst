@@ -33,8 +33,8 @@ describe("singleBlank Test", function() {
       name: "test-2-1",
       value: ["A"]
     };
-    expect(theSingleBlank.singleBlankMatch(answer)).toBe(1);
-    expect(theSingleBlank.singleBlankMatch(answer2)).toBe(0);
-    expect(theSingleBlank.singleBlankMatch(answer3)).toBe(2);
+    expect(theSingleBlank.caculateScore(answer)).toBe(1);
+    expect(theSingleBlank.caculateScore(answer2)).toBe(0);
+    expect(theSingleBlank.caculateScore(answer3)).toBe(2);
   });
 });

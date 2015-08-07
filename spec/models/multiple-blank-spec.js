@@ -21,7 +21,7 @@ describe("MultipleBlank Test", function() {
       name: 'test-1-1',
       value: ["森林", "杨林", "好好3", ]
     };
-    expect(theMutipleBlank.mutipleBlankMatch(answer)).toBe(2);
+    expect(theMutipleBlank.caculateScore(answer)).toBe(2);
 
   });
 });

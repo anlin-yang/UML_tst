@@ -6,7 +6,7 @@ SingleBlank.prototype.setSingleBlank = function(singleBlankAnswer) {
   this.answer = singleBlankAnswer;
 };
 
-SingleBlank.prototype.singleBlankMatch = function(singleBlankAnswer) {
+SingleBlank.prototype.caculateScore = function(singleBlankAnswer) {
   var realScore = 0;
   var isTrue = 0;
   this.answer.forEach(function(item) {
