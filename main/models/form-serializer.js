@@ -2,11 +2,8 @@ function FormAnalyser() {}
 
 FormAnalyser.prototype.formSerializer = function(form) {
   var result = [];
-
   [].forEach.call(form, function(elem) {
-    if ((elem.type === 'radio' && elem.checked === false) || (elem.type === 'checkbox' && elem.checked === false)) {
-
-    } else {
+    if ((elem.type === 'radio' && elem.checked === true) || (elem.type === 'checkbox' && elem.checked === true)) {
       var isExist;
       isExist = result.some(function(val) {
         return val.name === elem.name;
