@@ -5,4 +5,6 @@ function Question() {
   this.realAnswer = "";
 }
 
-Question
+Question.prototype.getScore = function() {
+  
+}
