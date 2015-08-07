@@ -1,4 +1,4 @@
 {
   "framework": "jasmine",
-  "src_files":["spec/dom-spec.js"]
+  "src_files":["spec/**/*-spec.js","main/**/.js"]
 }
