@@ -2,6 +2,6 @@ function StrategyFactory() {
 
 }
 
-StrategyFactory.prototype.getStrategy() {
-  
-}
+StrategyFactory.prototype.getStrategy = function() {
+
+};

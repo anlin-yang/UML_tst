@@ -6,5 +6,5 @@ function Question() {
 }
 
 Question.prototype.getScore = function() {
-  
-}
+
+};
