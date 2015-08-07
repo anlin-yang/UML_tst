@@ -1,14 +1,14 @@
-function MultipleChoice() {
-  this.answer = [];
+function ChoiceChecker() {
+  this.realAnswer = [];
 }
-MultipleChoice.prototype.caculateScore = function(mutipleChoiceanswer) {
+ChoiceChecker.prototype.caculateScore = function(mutipleChoiceanswer) {
   var isExist = 0;
   var correctNum = 0;
   var error = 0;
   var realScore = 0;
   var answerNum = 0;
 
-  this.answer.forEach(function(val) {
+  this.realAnswer.forEach(function(val) {
     if (val.name === mutipleChoiceanswer.name) {
       realScore = val.score;
       answerNum = val.value.length;
@@ -37,6 +37,6 @@ MultipleChoice.prototype.caculateScore = function(mutipleChoiceanswer) {
   return realScore;
 };
 
-MultipleChoice.prototype.setMultipleChoice = function(mutipleChoiceAnswer) {
-  this.answer = mutipleChoiceAnswer;
+ChoiceChecker.prototype.setRealAnswer = function(answer) {
+  this.realAnswer = answer;
 };

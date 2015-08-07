@@ -1,8 +1,8 @@
-function MutipleBlank() {
+function BlankChecker() {
   this.answer = [];
 }
 
-MutipleBlank.prototype.caculateScore = function(mutipleBlankAnswer) {
+BlankChecker.prototype.caculateScore = function(mutipleBlankAnswer) {
   var isExist = 0;
   var correctNum = 0;
   var realScore = 0;
@@ -31,6 +31,6 @@ MutipleBlank.prototype.caculateScore = function(mutipleBlankAnswer) {
   });
   return correctNum * realScore;
 };
-MutipleBlank.prototype.setMutipleBlank = function(MutipleBlankAnswer) {
-  this.answer = MutipleBlankAnswer;
+BlankChecker.prototype.setRealAnswer = function(BlankAnswer) {
+  this.answer = BlankAnswer;
 };

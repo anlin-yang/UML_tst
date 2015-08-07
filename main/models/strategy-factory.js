@@ -6,14 +6,14 @@ StrategyFactory.prototype.getStrategy = function(type) {
   var checkerObj;
   switch (type) {
     case "text":
-      checkerObj = new textChecker();
+      checkerObj = new BlankChecker();
       break;
     case "radio":
     case "checkbox":
-      checkerObj = new choiceChecker();
+      checkerObj = new ChoiceChecker();
       break;
     case "textarea":
-      checkerObj = new textAreaChecker();
+      checkerObj = new ComprehensionChecker();
   }
   return checkerObj;
 };
