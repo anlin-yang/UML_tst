@@ -37,8 +37,11 @@ describe("Dom Test", function() {
 
   it("should return corrent question array", function() {
     var theFormAnalyser = new FormAnalyser();
+
     var result = theFormAnalyser.formSerializer(form);
-    expect(result).toEqual([{
+    var finalScore = theFormAnalyser.getFinalScore();
+    expect(finalScore).toBe(10);
+    xexpect(result).toEqual([{
       name: "test-1-1",
       type: "text",
       value: ["啊哈"]

@@ -1,4 +1,6 @@
-function FormAnalyser() {}
+function FormAnalyser() {
+  this.questionList = [];
+}
 
 FormAnalyser.prototype._getValue = function(element) {
   var result = [];
@@ -9,7 +11,8 @@ FormAnalyser.prototype._getValue = function(element) {
 };
 
 FormAnalyser.prototype.formSerializer = function(form) {
-  var result = [];
+  //var result = [];
+  var realAnswer = new RealAnswer();
   var inputs = [].slice.call(form.getElementsByTagName('input'), 0);
 
   var group = inputs.filter(function(elem) {
@@ -22,13 +25,10 @@ FormAnalyser.prototype.formSerializer = function(form) {
   }, {});
 
   for (var elem in group) {
-    result.push({
-      name: elem,
-      type: group[elem][0].type,
-      value: this._getValue(group[elem])
-    });
+    var question = new Question(elem, group[elem][0].type, this._getValue(group[elem]), realAnswer.getRealAnswer(elem), realAnswer.getAnswerScore());
+    this.questionList.push(question);
   }
-  return result;
+  //return result;
   // var result = {};
   // inputs.filter(function(input) {
   //   return ((elem.type === 'radio' && elem.checked === true) || (elem.type === 'checkbox' && elem.checked === true));
@@ -41,4 +41,12 @@ FormAnalyser.prototype.formSerializer = function(form) {
   // for (input in result) {
   //
   // }
+};
+
+FormAnalyser.prototype.getFinalScore = function() {
+  var finalScore = 0;
+  this.questionList.forEach(function(val) {
+    finalScore += val.getScore();
+  });
+  return finalScore;
 };
