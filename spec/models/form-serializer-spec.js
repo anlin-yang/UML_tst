@@ -40,33 +40,33 @@ describe("Dom Test", function() {
 
     var result = theFormAnalyser.formSerializer(form);
     var finalScore = theFormAnalyser.getFinalScore();
-    expect(finalScore).toBe(10);
-    xexpect(result).toEqual([{
-      name: "test-1-1",
-      type: "text",
-      value: ["啊哈"]
-    }, {
-      name: "test-1-2",
-      type: "text",
-      value: ["无哈", "哈哈", "呵呵"]
-    }, {
-      name: "test-2-1",
-      type: "radio",
-      value: ["A"]
-    }, {
-      name: "test-3-1",
-      type: "checkbox",
-      value: ["A","B"]
-    }, {
-      name: "test-4-1",
-      type: "radio",
-      value: ["V"]
-    }
-    // , {
-    //   name: "test-5-1",
-    //   type: "textarea",
-    //   value: ["你是不是不好"]
+    expect(finalScore).toBe(15);
+    // expect(result).toEqual([{
+    //   name: "test-1-1",
+    //   type: "text",
+    //   value: ["啊哈"]
+    // }, {
+    //   name: "test-1-2",
+    //   type: "text",
+    //   value: ["无哈", "哈哈", "呵呵"]
+    // }, {
+    //   name: "test-2-1",
+    //   type: "radio",
+    //   value: ["A"]
+    // }, {
+    //   name: "test-3-1",
+    //   type: "checkbox",
+    //   value: ["A","B"]
+    // }, {
+    //   name: "test-4-1",
+    //   type: "radio",
+    //   value: ["V"]
     // }
-    ]);
+    // // , {
+    // //   name: "test-5-1",
+    // //   type: "textarea",
+    // //   value: ["你是不是不好"]
+    // // }
+    // ]);
   });
 });

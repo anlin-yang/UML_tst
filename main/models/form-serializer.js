@@ -25,7 +25,7 @@ FormAnalyser.prototype.formSerializer = function(form) {
   }, {});
 
   for (var elem in group) {
-    var question = new Question(elem, group[elem][0].type, this._getValue(group[elem]), realAnswer.getRealAnswer(elem), realAnswer.getAnswerScore());
+    var question = new Question(elem, group[elem][0].type, this._getValue(group[elem]), realAnswer.getRealAnswer(elem), realAnswer.getAnswerScore(elem));
     this.questionList.push(question);
   }
   //return result;

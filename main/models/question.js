@@ -8,8 +8,8 @@ function Question(name, type, writeAnswer, realAnswer, score) {
 
 Question.prototype.getScore = function() {
   var score = 0;
-  var strategyFactory = new StrategyFactory(this.writeAnswer);
+  var strategyFactory = new StrategyFactory();
   var checkerObj = strategyFactory.getStrategyObj(this.type);
-  score = checkerObj.caculateScore(this.writeAnswer, this.realAnswer);
+  score = checkerObj.caculateScore(this.writeAnswer, this.realAnswer, this.score);
   return score;
 };
