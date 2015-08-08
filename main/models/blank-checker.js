@@ -3,18 +3,17 @@ function BlankChecker() {}
 BlankChecker.prototype.caculateScore = function(writeAnswer, realAnswer, answerScore) {
   var isExist = 0;
   var correctNum = 0;
-  var realScore = 0;
+  var everyQuestionScore = 0;
   var groupTemp = {};
-  var groupedArr = [];
+  var groupedAnswer = [];
+  everyQuestionScore = answerScore / realAnswer.length;
   writeAnswer.forEach(function(val) {
     groupTemp[val] = groupTemp[val] || val;
   });
   for (var item in groupTemp) {
-    groupedArr.push(item);
+    groupedAnswer.push(item);
   }
-
-  realScore = answerScore / realAnswer.length;
-  groupedArr.forEach(function(elem) {
+  groupedAnswer.forEach(function(elem) {
     isExist = realAnswer.some(function(item) {
       return item === elem;
     });
@@ -23,5 +22,5 @@ BlankChecker.prototype.caculateScore = function(writeAnswer, realAnswer, answerS
     }
     isExist = 0;
   });
-  return correctNum * realScore;
+  return correctNum * everyQuestionScore;
 };
